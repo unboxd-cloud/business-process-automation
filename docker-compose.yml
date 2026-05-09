@@ -1,0 +1,20 @@
+version: '3.7'
+services:
+  activiti:
+    image: activiti/activiti-cloud-full:latest
+    ports:
+      - '8080:8080'
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/activiti
+      - SPRING_DATASOURCE_USERNAME=activiti
+      - SPRING_DATASOURCE_PASSWORD=activiti
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: activiti
+      POSTGRES_PASSWORD: activiti
+      POSTGRES_DB: activiti
+    ports:
+      - '5432:5432'
