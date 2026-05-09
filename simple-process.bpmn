@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" id="Definitions_1">
+  <process id="simpleProcess" name="Simple Process" isExecutable="true">
+    <startEvent id="startEvent" name="Start"/>
+    <userTask id="task1" name="Review Task"/>
+    <endEvent id="endEvent" name="End"/>
+    <sequenceFlow id="flow1" sourceRef="startEvent" targetRef="task1"/>
+    <sequenceFlow id="flow2" sourceRef="task1" targetRef="endEvent"/>
+  </process>
+</definitions>
